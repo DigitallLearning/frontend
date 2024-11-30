@@ -22,6 +22,7 @@ function Home()
   {
     const url="https://jayant-5r66.onrender.com/cart"
     const formData=new FormData()
+    formData.append("pid",pid)
     formData.append("pname",name)
     formData.append("pprice",parseInt(price))
     formData.append("pimage",image)
@@ -65,7 +66,7 @@ function Home()
               <MDBCardText>{item.pcat}</MDBCardText>
               <MDBCardText>{item.pdesc}</MDBCardText>
               <MDBBtn onClick={()=>singlecard(item.pid)}>View Details</MDBBtn>
-              &nbsp;&nbsp;<MDBBtn onClick={()=>addtoCart(item.pname,item.pprice,item.pimage)}>Add to Cart</MDBBtn>
+              &nbsp;&nbsp;<MDBBtn onClick={()=>addtoCart(item.pid,item.pname,item.pprice,item.pimage)}>Add to Cart</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
